@@ -1,3 +1,122 @@
-.selected {
-    background-color: yellow;
+/* Layout */
+body {
+    font-family: "Open Sans", Arial, sans-serif;
+    width: 350px;
+    margin: 50px auto 0;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+    counter-reset: my-badass-counter;
+}
+
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 5px;
+    margin-top: 0;
+    font-weight: 300;
+}
+
+input:focus,
+button:focus {
+    outline: none;
+}
+
+.logo {
+    width: 60px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Create account */
+.player-add {
+    margin-top: 20px;
+}
+.player-add input {
+    font-family: "Open Sans", Arial, sans-serif;
+    border: 1px solid #aaa;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding: 0 15px;
+    height: 35px;
+    line-height: 28px;
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(100% - 135px);
+    font-size: 14px;
+}
+.player-add button {
+    display: inline-block;
+    vertical-align: middle;
+    height: 37px;
+    background: #464f75;
+    color: #fff;
+    border-radius: 0;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    margin-left: -5px;
+}
+.player-add button:hover {
+    background: #7580ac;
+}
+input:focus {
+    border: 1px solid #464f75;
+}
+
+/* Player */
+.player {
+    cursor: pointer;
+    padding: 9px 15px;
+    border-bottom: 1px solid #f8f8f8;
+    border-left: 3px solid transparent;
+    color: #686e75;
+    font-size: 16px;
+}
+.player:before {
+    content: counter(my-badass-counter);
+    counter-increment: my-badass-counter;
+    font-size: 13px;
+    font-weight: 600;
+    margin-right: 20px;
+    color: #a8a5a6;
+}
+.player:first-of-type {
+    border-top: 1px solid #f8f8f8;
+}
+.player.selected {
+    background-color: #fefff5;
+    border-left: 3px solid #464f75;
+}
+.player span {
+    color: #000;
+    font-weight: 600;
+    float: right;
+    font-size: 14px;
+}
+
+/* Actions */
+.player-selected {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+button {
+    height: 30px;
+    padding: 0 8px;
+    background: transparent;
+    border: 1px solid #464f75;
+    color: #464f75;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background .2s;
+    font-size: 14px;
+}
+button:hover {
+    background: #464f75;
+    color: #fff;
+}
+button:focus {
+    outline: none;
 }

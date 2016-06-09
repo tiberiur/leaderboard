@@ -1,8 +1,11 @@
 <head>
     <title>Leaderboard</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
+    <img class="logo" src="http://imgh.us/sportive-scores.svg" alt="logo leaderboard">
     <h1>Leaderboard</h1>
     {{> loginButtons}}
     {{#if currentUser}}
@@ -16,22 +19,22 @@
     {{> addPlayerForm}}
     <ul>
         {{#each player}}
-            <li class="player {{selectedClass}}">{{name}}: {{score}}</li>
+            <li class="player {{selectedClass}}">{{name}}<span>{{score}}</span></li>
         {{/each}}
+    </ul>
+    <div class="actions">
         {{#if selectedPlayer}}
-        <li>
+            <p class="player-selected">{{selectedPlayer.name}}</p>
             <button class="increment">Give 5 Points</button>
             <button class="decrement">Take 5 Points</button>
             <button class="remove">Remove Player</button>
-        </li>
-        <li>Selected Player: {{selectedPlayer.name}}</li>
         {{/if}}
-    </ul>
+    </div>
 </template>
 
 <template name="addPlayerForm">
-    <form>
-        <input type="text" name="playerName">
-        <input type="submit" value="Add Player">
+    <form class="player-add">
+        <input type="text" name="playerName" placeholder="Insert player name">
+        <button>Add Player</button>
     </form>
 </template>
